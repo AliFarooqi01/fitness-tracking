@@ -14,24 +14,18 @@ dotenv.config();
 const app = express();
 
 // Allowed origins for CORS
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  "https://fitness-tracking-o7uw.vercel.app"
-];
+
 
 // Middleware
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://fitness-tracking-o7uw.vercel.app", // your frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
 
 app.use(express.json());
 
