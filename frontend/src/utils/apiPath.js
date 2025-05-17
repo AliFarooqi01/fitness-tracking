@@ -1,4 +1,4 @@
-export const BASE_URL = "https://fitness-tracking-one.vercel.app"; // keep same if backend runs on 8000
+export const BASE_URL = "https://vercel-backend-production-c6fa.up.railway.app"; // keep same if backend runs on 8000
 
 export const API_PATHS = {
     AUTH: {
